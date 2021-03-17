@@ -183,5 +183,7 @@ Use the `higet` command to pull a dataset. Examples:
 
 # **PUBLISHING DATA INTO THE hICN TESTBED**
 
+To install and configure hICN for publishing data or other applications, see [hicn-config.md]().
+
 
 # **3000+ GENOMES USE CASE**
