@@ -81,7 +81,7 @@ To deploy to a Kubernetes cluster, you must have a bound PVC for the container t
 
 #### (Optional) Create NFS Persistent Volume Claim
 
-We use Helm to create a Dynamic NFS volume provisioner, then use [hicn-pvc.yaml](https://github.com/cbmckni/hicn-client/blob/master/hicn-client.yaml) to request a Read-Write-Many(RWX) PVC.
+We use Helm to create a Dynamic NFS volume provisioner, then use [hicn-pvc.yaml](https://github.com/cbmckni/hicn-genomics/blob/master/kubernetes/hicn-pvc.yaml) to request a Read-Write-Many(RWX) PVC.
 
 Update Helm's repositories(similar to `apt-get update)`:
 
@@ -183,7 +183,7 @@ Use the `higet` command to pull a dataset. Examples:
 
 # **PUBLISHING DATA INTO THE hICN TESTBED**
 
-To install and configure hICN for publishing data or other applications, see [hicn-config.md]().
+To install and configure hICN for publishing data or other applications, see [hicn-config.md](https://github.com/cbmckni/hicn-genomics/blob/master/node-setup/hicn-config.md).
 
 
 # **3000+ GENOMES USE CASE**
