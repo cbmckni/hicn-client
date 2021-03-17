@@ -1,4 +1,4 @@
-## hICN-Genomics
+# **hICN-Genomics**
 
 This repository contains code generated in collaboration between Cisco and Clemson University funded upder Cisco Research Proposal "Exposing the Potential of Hybrid ICN (hICN) for Genomics" (ProjectID: 1380311).  This README is divided into 3 sections:  
 
@@ -181,6 +181,7 @@ Use the `higet` command to pull a dataset. Examples:
 
 `higet http://hicn-http-proxy/4754.tgz`
 
+# **PUBLISHING DATA INTO THE hICN TESTBED**
 
 
-
+# **3000+ GENOMES USE CASE**
