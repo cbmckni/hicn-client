@@ -7,8 +7,11 @@ This is the specification and documnetation for a HICN client container. End use
 Set the name of the hicn client image and the port it should use:
 
 `export IMAGE_NAME="hicn-client-image"`
+
 `export NAME="hicn-client"`
+
 `export PORT="33567"`
+
 `export HICN_ENDPOINT="198.111.224.199:33567"`
 
 *The default SHICN_ENDPOINT IP/port is a server intended for testing hicn client connectivity. It may or may not be serving content at the time of your testing.*
@@ -68,7 +71,7 @@ To deploy to a Kubernetes cluster, you must have a bound PVC for the container t
 
 #### (Optional) Create NFS Persistent Volume Claim
 
-We use Helm to create a Dynamic NFS volume provisioner, then use [hicn-pvc.yaml]() to request a Read-Write-Many(RWX) PVC.
+We use Helm to create a Dynamic NFS volume provisioner, then use [hicn-pvc.yaml](https://github.com/cbmckni/hicn-client/blob/master/hicn-client.yaml) to request a Read-Write-Many(RWX) PVC.
 
 Update Helm's repositories(similar to `apt-get update)`:
 
