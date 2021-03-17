@@ -1,3 +1,13 @@
+## hICN-Genomics
+
+This repository contains code generated in collaboration between Cisco and Clemson University funded upder Cisco Research Proposal "Exposing the Potential of Hybrid ICN (hICN) for Genomics" (ProjectID: 1380311).  This README is divided into 3 sections:  
+
+1. Pulling data from an hICN testbed using an hICN client container.
+2. Publishing data into an hICN testbed.
+3. Case study of publishing 3000+ indexed genomes in to the testbed.
+
+# **PULLING DATA FROM hICN TESTBED**
+
 ## hICN Client
 
 This is the specification and documentation for a HICN client container. End users can use this image to pull data from a HICN network to any container-compatible platform of their choosing.
