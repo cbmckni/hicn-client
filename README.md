@@ -1,4 +1,4 @@
-# hicn-client
+# hICN Client
 
 This is the specification and documnetation for a HICN client container. End users can use this image to pull data from a HICN network to any container-compatible platform of their choosing.
 
