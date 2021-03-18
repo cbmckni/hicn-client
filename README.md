@@ -188,7 +188,8 @@ To install and configure hICN for publishing data or other applications, see [hi
 
 # **3000+ GENOMES USE CASE**
 We have initiated a pilot genomics content use case of hICN.  Two named content compendia were created: Named Indexed Genome Compendia and Named Raw RNAseq Compendia.
-Named Indexed Genome Compendia. In collaboration with Washington State University, Clemson University, Tennessee Tech University, and Cisco, we have downloaded 3,042 published genomes (i.e., FASTA) and gene coordinate (e.g. GTF) files from ENSEMBL or NCBI using Pynome software (https://github.com/SystemsGenetics/pynome).  The genomes were preprocessed and indexed for input into hisat2, kallisto, and salmon workflows.  Then the files were named for publication into an hICN system.  For specific version of the genome mapping software used for indexing, please see:  https://github.com/SystemsGenetics/pynome/blob/master/Dockerfile. 
+
+*Named Indexed Genome Compendia.* In collaboration with Washington State University, Clemson University, Tennessee Tech University, and Cisco, we have downloaded 3,042 published genomes (i.e., FASTA) and gene coordinate (e.g. GTF) files from ENSEMBL or NCBI using Pynome software (https://github.com/SystemsGenetics/pynome).  The genomes were preprocessed and indexed for input into hisat2, kallisto, and salmon workflows.  Then the files were named for publication into an hICN system.  For specific version of the genome mapping software used for indexing, please see:  https://github.com/SystemsGenetics/pynome/blob/master/Dockerfile. 
 
 These genomes represent a snapshot of all published genomes and are used by researchers across biology domains (and the planet) as reference DNA sequences for identifying genetic and epigenetic differences between individuals of major species, quantifying gene expression, and and many more applications that require data-intensive computing.
 
@@ -205,7 +206,7 @@ The genome datasets were named by a standard Taxonomy ID (e.g., Human = Homo sap
 
 A subset of popular genomes (e.g. human) have been published in the hICN testbed for benchmarking purposes and insertion into genomics workflows.  They can be accessed using instructions from this repository and the taxonomy ID.  We intend to split these files into specific named indexes in the near future.  
 
-Named Raw RNAseq Compendia.  In addition to the reference genomes, we have created a naming strategy for all RNAseq data sets from the NCBI-SRA archive.  This database contains over 50 petabytes of data and  is experiencing geometric growth (https://trace.ncbi.nlm.nih.gov/Traces/sra/).  We have named RNAseq files around the Taxonomy ID and SRA run identifier.  Here is an example of the naming structure of a human kidney RNAseq dataset:
+*Named Raw RNAseq Compendia.*  In addition to the reference genomes, we have created a naming strategy for all RNAseq data sets from the NCBI-SRA archive.  This database contains over 50 petabytes of data and  is experiencing geometric growth (https://trace.ncbi.nlm.nih.gov/Traces/sra/).  We have named RNAseq files around the Taxonomy ID and SRA run identifier.  Here is an example of the naming structure of a human kidney RNAseq dataset:
 /BIOLOGY/SRA/9605/9606/NaN/RNA-Seq/ILLUMINA/TRANSCRIPTOMIC/PAIRED/Kidney/PRJNA359795/SRP095950/SRX2458154/SRR5139398/1 > SRR5139398_1.fastq.gz
 
 We have published several datasets for workflow insertion and performance testing:
