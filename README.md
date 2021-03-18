@@ -187,3 +187,33 @@ To install and configure hICN for publishing data or other applications, see [hi
 
 
 # **3000+ GENOMES USE CASE**
+We have initiated a pilot genomics content use case of hICN.  Two named content compendia were created: Named Indexed Genome Compendia and Named Raw RNAseq Compendia.
+Named Indexed Genome Compendia. In collaboration with Washington State University, Clemson University, Tennessee Tech University, and Cisco, we have downloaded 3,042 published genomes (i.e., FASTA) and gene coordinate (e.g. GTF) files from ENSEMBL or NCBI using Pynome software (https://github.com/SystemsGenetics/pynome).  The genomes were preprocessed and indexed for input into hisat2, kallisto, and salmon workflows.  Then the files were named for publication into an hICN system.  For specific version of the genome mapping software used for indexing, please see:  https://github.com/SystemsGenetics/pynome/blob/master/Dockerfile. 
+
+These genomes represent a snapshot of all published genomes and are used by researchers across biology domains (and the planet) as reference DNA sequences for identifying genetic and epigenetic differences between individuals of major species, quantifying gene expression, and and many more applications that require data-intensive computing.
+
+In aggregate, these named indexed genome files sum to 7.8 Terabytes (uncompressed).  These datasets are an asset to any researcher doing genomics for several reasons.  First, the researcher (or application) need only to provide the taxonomy "species" unique identifier to pull the dataset.  Second, the dataset has been pre-indexed, which is computationally expensive, for several popular genomics applications including hisat2, kallisto, and salmon. Third, the datasets can be positioned near compute using the hICN allowing for efficient data transfers.
+
+The genome datasets were named by a standard Taxonomy ID (e.g., Human = Homo sapiens = 9606).  Currently, they are pulled as a compressed archive, but we will parse into specific indexed datasets for retrieval. We are also developing a REST API service on top of a metadata engine with dataset URLs for searching for named dataset groups and dynamic dataset publication into an hICN system. Here is an example of the named file structure for these genome files: 
+/BIOLOGY/Genome/ENSEMBL/
+[genus]_[species]{_[infraspecific_name]}-[assemply_name]
+[genus]_[species]{_[infraspecific_name]}-[assemply_name].{index extension e.g. ht2}
+[genus]_[species]{_[infraspecific_name]}-[assemply_name].gff3
+[genus]_[species]{_[infraspecific_name]}-[assemply_name].fasta
+[genus]_[species]{_[infraspecific_name]}-[assemply_name].gtf
+[genus]_[species]{_[infraspecific_name]}-[assemply_name],Spice_Sites.txt
+
+A subset of popular genomes (e.g. human) have been published in the hICN testbed for benchmarking purposes and insertion into genomics workflows.  They can be accessed using instructions from this repository and the taxonomy ID.  We intend to split these files into specific named indexes in the near future.  
+
+Named Raw RNAseq Compendia.  In addition to the reference genomes, we have created a naming strategy for all RNAseq data sets from the NCBI-SRA archive.  This database contains over 50 petabytes of data and  is experiencing geometric growth (https://trace.ncbi.nlm.nih.gov/Traces/sra/).  We have named RNAseq files around the Taxonomy ID and SRA run identifier.  Here is an example of the naming structure of a human kidney RNAseq dataset:
+/BIOLOGY/SRA/9605/9606/NaN/RNA-Seq/ILLUMINA/TRANSCRIPTOMIC/PAIRED/Kidney/PRJNA359795/SRP095950/SRX2458154/SRR5139398/1 > SRR5139398_1.fastq.gz
+
+We have published several datasets for workflow insertion and performance testing.  
+•	NCBI-SRA-Animal_Example:(0.16 TB; 36X2 SRA Samples; Human kidney): https://www.ncbi.nlm.nih.gov/bioproject/359795
+Transcriptome sequencing (RNA-Seq) of non-tumor kidney tissues from 36 patients undergoing nephrectomy for exploring the metabolic mechanism of sorafenib and identifying the major transcriptional regulation factors in sorafenib metabolism in kidney
+•	NCBI-SRA-Plant_Example: (1.14 TB; 475X2 SRA Samples; Rice leaves):
+Rice gene expression in heat stress and dehydration stress - time series
+https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA301554
+
+We intend to expand these offering to all primate data as well as trigger mechanisms to automatically publish and name a dataset from NCBI-SRA and NASA GeneLab into hICN using data URIs.
+
