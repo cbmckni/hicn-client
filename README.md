@@ -209,9 +209,9 @@ Named Raw RNAseq Compendia.  In addition to the reference genomes, we have creat
 /BIOLOGY/SRA/9605/9606/NaN/RNA-Seq/ILLUMINA/TRANSCRIPTOMIC/PAIRED/Kidney/PRJNA359795/SRP095950/SRX2458154/SRR5139398/1 > SRR5139398_1.fastq.gz
 
 We have published several datasets for workflow insertion and performance testing.  
-•	NCBI-SRA-Animal_Example:(0.16 TB; 36X2 SRA Samples; Human kidney): https://www.ncbi.nlm.nih.gov/bioproject/359795
+*NCBI-SRA-Animal_Example:(0.16 TB; 36X2 SRA Samples; Human kidney): https://www.ncbi.nlm.nih.gov/bioproject/359795
 Transcriptome sequencing (RNA-Seq) of non-tumor kidney tissues from 36 patients undergoing nephrectomy for exploring the metabolic mechanism of sorafenib and identifying the major transcriptional regulation factors in sorafenib metabolism in kidney
-•	NCBI-SRA-Plant_Example: (1.14 TB; 475X2 SRA Samples; Rice leaves):
+*NCBI-SRA-Plant_Example: (1.14 TB; 475X2 SRA Samples; Rice leaves):
 Rice gene expression in heat stress and dehydration stress - time series
 https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA301554
 
