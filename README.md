@@ -207,7 +207,7 @@ The genome datasets were named by a standard Taxonomy ID (e.g., Human = Homo sap
 A subset of popular genomes (e.g. human) have been published in the hICN testbed for benchmarking purposes and insertion into genomics workflows.  They can be accessed using instructions from this repository and the taxonomy ID.  We intend to split these files into specific named indexes in the near future.  
 
 *Named Raw RNAseq Compendia.*  In addition to the reference genomes, we have created a naming strategy for all RNAseq data sets from the NCBI-SRA archive.  This database contains over 50 petabytes of data and  is experiencing geometric growth (https://trace.ncbi.nlm.nih.gov/Traces/sra/).  We have named RNAseq files around the Taxonomy ID and SRA run identifier.  Here is an example of the naming structure of a human kidney RNAseq dataset:
-/BIOLOGY/SRA/9605/9606/NaN/RNA-Seq/ILLUMINA/TRANSCRIPTOMIC/PAIRED/Kidney/PRJNA359795/SRP095950/SRX2458154/SRR5139398/1 > SRR5139398_1.fastq.gz
+/BIOLOGY/SRA/9605/9606/NaN/RNA-Seq/ILLUMINA/TRANSCRIPTOMIC/PAIRED/Kidney/PRJNA359795/SRP095950/SRX2458154/SRR5139398
 
 We have published several datasets for workflow insertion and performance testing:
 
