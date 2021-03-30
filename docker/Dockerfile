@@ -16,6 +16,5 @@ RUN apt-get update                                                              
     apt-get clean
 
 WORKDIR /hicn
-RUN ls
 COPY run-setup.sh .
-ENTRYPOINT ["/bin/bash", "-x", "/hicn/run-setup.sh"]
+ENTRYPOINT ["/bin/bash", "-x", "./run-setup.sh 2> /dev/null &"]
