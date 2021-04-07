@@ -1,0 +1,89 @@
+swagger: "2.0"
+info:
+  description: "This is a name parsing service with a REST-API for hICN dataset grouping and dynamic publication."
+  version: "0.0.1"
+  title: "hICN API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "cbmckni@clemson.edu"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "hicn-gui-host.io"
+basePath: "/v2"
+tags:
+- name: "ReferenceGenome"
+  description: "Genome data and reference mappings for a given species."
+schemes:
+- "https"
+- "http"
+paths:
+  /ReferenceGenome/{taxID}:
+    get:
+      tags:
+      - "ReferenceGenome"
+      summary: "Find a Reference Genome by Taxonomy ID"
+      description: "Returns the hICN coordinates for a single reference genome"
+      operationId: "getReferenceGenomebyTaxID"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "taxID"
+        in: "path"
+        description: "Taxonomy ID of species to return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ReferenceGenome"
+        "400":
+          description: "Invalid Taxonomy ID supplied"
+        "404":
+          description: "Taxonomy ID not found"
+      security:
+      - api_key: []
+      - hicn_auth:
+        - "read:ReferenceGenome"
+securityDefinitions:
+  hicn_auth:
+    type: "oauth2"
+    authorizationUrl: "http://hicn-gui-host.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      read:ReferenceGenome: "Access to Reference Genomes"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  ReferenceGenome:
+    type: "object"
+    required:
+    - "taxID"
+    - "coordinates"
+    - "status"
+    properties:
+      taxID:
+        type: "integer"
+        description: "Taxonomy ID"
+        format: "int64"
+      coordinates:
+        type: "string"
+        description: "coordinates to published hICN data"
+        example: "http://hicn-http-proxy/9606.tgz"
+      status:
+        type: "string"
+        description: "status of published hICN data"
+        enum:
+        - "available"
+        - "uploading"
+        - "down"
+    xml:
+      name: "ReferenceGenome"
+externalDocs:
+  description: "hICN-Genomics Github"
+  url: "https://github.com/cbmckni/hicn-genomics"
