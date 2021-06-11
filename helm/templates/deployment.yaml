@@ -17,6 +17,8 @@ spec:
       containers:               
       - name: {{ .Values.Deployment.Name }}
         image: {{ .Values.Deployment.Image }}
+        ports:
+            - containerPort: 33567
         command: [ "/bin/bash", "-c", "--" ]
         args: [ {{ .Values.Deployment.Arg }} ]
         securityContext:
@@ -56,8 +58,8 @@ spec:
   selector:
     app: {{ .Values.Deployment.Name }}
   ports:
-  - port: 6363
-    targetPort: 6363
+  - port: 33567
+    targetPort: 33567
 ---
 {{ if .Values.Ingress.Enabled }}
 apiVersion: extensions/v1beta1
@@ -75,7 +77,7 @@ spec:
       - path: /
         backend:
           serviceName: {{ .Values.Deployment.Name }}
-          servicePort: 6363
+          servicePort: 33567
 
 ---
 {{ end }}

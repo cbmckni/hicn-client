@@ -30,7 +30,7 @@ Resources:
 ExistingPVC:
   # If true, use existing PVC on local cluster.
   Enabled: true
-  Name: deepgtex-prp
+  Name: task-pv-claim-faf
   Path: /workspace
 
 NewPVC:
