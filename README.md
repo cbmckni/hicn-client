@@ -153,6 +153,14 @@ Delete the deployment:
 
 `helm uninstall kf`
 
+### Helm
+
+Configure `helm/values.yaml`
+
+Deploy with `helm install <DEPLOYMENT_NAME> helm/`
+
+Uninstall: `helm uninstall <DEPLOYMENT_NAME>`
+
 ## Usage
 
 Run the setup script:

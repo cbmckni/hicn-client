@@ -10,8 +10,8 @@ Deployment:
   Host: false # deploy to specific host vs "random"
   Hostname: epic001.clemson.edu
   Replicas: 1
-  Arg: "/usr/local/bin/nfd -c $CONFIG > $LOG_FILE 2>&1 && tail -f /dev/null"
-# EXAMPLE MANUAL: "/usr/local/bin/nfd -c $CONFIG > $LOG_FILE 2>&1 && tail -f /dev/null"
+  Arg: "tail -f /dev/null"
+# EXAMPLE MANUAL: "tail -f /dev/null" 
 
 # Resource Requests
 
