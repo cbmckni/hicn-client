@@ -1,7 +1,5 @@
 #!/bin/sh
 
-dhclient &
-
 curl -s https://packagecloud.io/install/repositories/fdio/release/script.deb.sh | bash
 
 apt-get update                                                              &&  \
