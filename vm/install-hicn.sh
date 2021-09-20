@@ -1,5 +1,7 @@
 #!/bin/sh
 
+dhclient &
+
 curl -s https://packagecloud.io/install/repositories/fdio/release/script.deb.sh | bash
 
 apt-get update                                                              &&  \
@@ -17,3 +19,10 @@ apt-get update                                                              &&  
     hicn-plugin=20.01-73-release \
     libhicn=20.01-114-release \
     apache2
+    
+git clone http://dpdk.org/git/dpdk
+
+cd dpdk
+export RTE_SDK=$(pwd)
+export RTE_TARGET=x86_64-native-linux-gcc
+make install T=$RTE_TARGET

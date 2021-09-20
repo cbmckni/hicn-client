@@ -1,2 +1,2 @@
 FROM scratch
-ADD bionic-server-cloudimg-amd64.img /disk/
+ADD hicn.img /disk/

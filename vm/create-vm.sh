@@ -7,11 +7,11 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-wget https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
+wget -O hicn.img https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
 
-#qemu-img resize bionic-server-cloudimg-amd64.img 5G
+#qemu-img resize hicn.img 5G
 
-virt-customize -a bionic-server-cloudimg-amd64.img --root-password password:$1
+virt-customize -a hicn.img --root-password password:$1
 
 PWD=$(pwd)
 
@@ -33,7 +33,7 @@ cat > vm.xml <<EOF
     <emulator>/usr/libexec/qemu-kvm</emulator>
   <disk type='file' device='disk'>
        <driver name='qemu' type='qcow2'/>
-       <source file='${PWD}/bionic-server-cloudimg-amd64.img'/>
+       <source file='${PWD}/hicn.img'/>
        <target dev='vda' bus='virtio'/>
   </disk>
   <interface type='bridge'>
